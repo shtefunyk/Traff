@@ -6,6 +6,7 @@ plugins {
     id 'kotlin-android-extensions'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
+    id 'maven-publish'
 }
 
 android {
@@ -22,6 +23,17 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'com.pampam.lib'
+            artifactId = 'myapplication'
+            version = '1.1'
+
+        }
     }
 }
 
