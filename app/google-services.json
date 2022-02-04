@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "528374291126",
+    "project_id": "lib777test",
+    "storage_bucket": "lib777test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528374291126:android:0eb836719a0a9825642417",
+        "android_client_info": {
+          "package_name": "com.pampam.lib777"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528374291126-69u4thjaob066jjep7s99hod8b7a1o0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy44gOfNVYXJ677RIsP63k62b_R0ASoY0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528374291126-69u4thjaob066jjep7s99hod8b7a1o0k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
