@@ -32,7 +32,6 @@ publishing {
             groupId = 'com.pampam'
             artifactId = 'lib'
             version = '1.2'
-
         }
     }
 }

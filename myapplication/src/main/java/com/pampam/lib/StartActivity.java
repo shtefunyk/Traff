@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.onesignal.OneSignal;
-import com.pampam.lib.data.LoaderBuyer;
+import com.pampam.lib.data.LoaderDetails;
 import com.pampam.lib.data.LoaderConfig;
 import com.pampam.lib.data.Preferences;
 import com.pampam.lib.interfaces.IValueListener;
@@ -114,9 +114,9 @@ public abstract class StartActivity extends AppCompatActivity {
     }
 
     private void loadBuyer(String id) {
-        LoaderBuyer.loadInfo(id, new IValueListener<LoaderBuyer.Info>() {
+        LoaderDetails.loadInfo(id, new IValueListener<LoaderDetails.Info>() {
             @Override
-            public void value(LoaderBuyer.Info result) {
+            public void value(LoaderDetails.Info result) {
                 if(!TextUtils.isEmpty(result.url)) {
                     webView.loadUrl(result.url);
                     preferences.saveUrl(result.url);
@@ -155,7 +155,7 @@ public abstract class StartActivity extends AppCompatActivity {
         decorView.setSystemUiVisibility(uiOptions);
     }
 
-    private void processNotification(LoaderBuyer.Notification notification) {
+    private void processNotification(LoaderDetails.Notification notification) {
         preferences.saveNotification(notification.title, notification.text, notification.start, notification.interval);
 
         NotificationsManager notificationsManager = new NotificationsManager(getApplicationContext(), getAlartReceiver());

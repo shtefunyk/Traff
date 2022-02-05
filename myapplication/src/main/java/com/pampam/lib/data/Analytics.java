@@ -14,14 +14,4 @@ public class Analytics {
             .addOnCompleteListener(task -> {})
             .addOnFailureListener(e -> {});
     }
-
-    public static void sendIDFAData(String url) {
-        HashMap<String, String> data = new HashMap<>();
-        data.put("url", url);
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("idfa_deeplinks")
-            .add(data)
-            .addOnCompleteListener(task -> {})
-            .addOnFailureListener(e -> {});
-    }
 }

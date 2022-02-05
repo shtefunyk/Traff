@@ -5,7 +5,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.pampam.lib.interfaces.IValueListener;
 
-public class LoaderBuyer {
+public class LoaderDetails {
 
     public static class Info {
         public String url;
