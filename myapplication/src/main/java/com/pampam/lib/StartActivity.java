@@ -93,18 +93,18 @@ public abstract class StartActivity extends AppCompatActivity {
             @Override
             public void value(LoaderConfig.Config result) {
                 initOneSignal(result.oneSignal);
+                loadAdsDeeplink(result.useNaming);
             }
             @Override public void failed() {}
         });
-        loadAdsDeeplink();
     }
 
-    private void loadAdsDeeplink() {
+    private void loadAdsDeeplink(boolean useNaming) {
         ((App) getApplication()).getAppsflyerData(new IValueListener<EntityAppsflyerData>() {
             @Override
             public void value(EntityAppsflyerData result) {
                 boolean hasNaming = !TextUtils.isEmpty(result.getNaming());
-                loadBuyer(hasNaming ? result.getNaming() : "default");
+                loadBuyer(hasNaming && useNaming ? result.getNaming() : "default");
             }
             @Override
             public void failed() {

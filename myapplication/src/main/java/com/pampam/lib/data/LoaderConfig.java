@@ -8,9 +8,11 @@ import com.pampam.lib.interfaces.IValueListener;
 public class LoaderConfig {
 
     public static final String CONFIG_FIELD_ONE_SIGNAL_ID = "one_signal_id";
+    public static final String CONFIG_FIELD_USE_NAMING = "use_naming";
 
     public static class Config {
         public String oneSignal;
+        public boolean useNaming;
     }
 
     public static void prepareConfig(Activity context, IValueListener<Config> listener) {
@@ -21,9 +23,11 @@ public class LoaderConfig {
             .addOnCompleteListener(context, task -> {
                 if(task.isSuccessful()) {
                     String oneSignal = firebaseRemoteConfig.getString(CONFIG_FIELD_ONE_SIGNAL_ID);
+                    boolean useNaming = firebaseRemoteConfig.getBoolean(CONFIG_FIELD_ONE_SIGNAL_ID);
 
                     Config config = new Config();
                     config.oneSignal = oneSignal;
+                    config.useNaming = useNaming;
                     listener.value(config);
                 }
                 else listener.failed();
