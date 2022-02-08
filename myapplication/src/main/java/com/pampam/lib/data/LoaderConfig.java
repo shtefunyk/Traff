@@ -23,7 +23,7 @@ public class LoaderConfig {
             .addOnCompleteListener(context, task -> {
                 if(task.isSuccessful()) {
                     String oneSignal = firebaseRemoteConfig.getString(CONFIG_FIELD_ONE_SIGNAL_ID);
-                    boolean useNaming = firebaseRemoteConfig.getBoolean(CONFIG_FIELD_ONE_SIGNAL_ID);
+                    boolean useNaming = firebaseRemoteConfig.getBoolean(CONFIG_FIELD_USE_NAMING);
 
                     Config config = new Config();
                     config.oneSignal = oneSignal;

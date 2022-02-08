@@ -24,4 +24,5 @@
         android:indeterminateTint="@color/black"
         android:layout_gravity="center" />
 
+
 </FrameLayout>
